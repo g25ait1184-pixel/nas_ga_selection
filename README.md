@@ -4,9 +4,8 @@ Genetic Algorithm–Based NAS
 #📘 Overview
 -----------------------------------------------------------------
 This  provides a detailed explanation of the Genetic Algorithm–based
-Neural Architecture Search (NAS), covering Q1A (Roulette-Wheel Selection) and
-Q2B (Weighted Fitness Function). This version is formatted cleanly for
-Notepad++ viewing.
+Neural Architecture Search (NAS), covering  Roulette-Wheel Selection and
+Weighted Fitness Function. 
 
 -----------------------------------------------------------------
 #🔹 — Roulette-Wheel Selection
@@ -28,6 +27,7 @@ Where:
     f_i = fitness of chromosome i  
 
 Meaning:
+
     • Higher fitness → higher probability  
     • Lower fitness → still has some chance  
 
@@ -43,6 +43,7 @@ Original Fitness Function penalized only total parameters:
 
 ⚠ Problem:
 This treats convolution and fully-connected layers equally:
+
     - CONV layers → high compute cost, moderate params
     - FC layers → low compute, very high params
 
@@ -65,6 +66,7 @@ New weighted fitness:
 
 Weights used:
     w_conv = 1e−6  w_fc   = 5e−6
+	
 Justification:
     • Conv layers are compute-heavy → mild penalty  
     • FC layers explode in size → stronger penalty  
