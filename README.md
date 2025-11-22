@@ -48,7 +48,7 @@ This treats convolution and fully-connected layers equally:
 Thus the penalty is not realistic.
 
 -----------------------------------------------------------------
-✔ Modified Fitness Function (Conv vs FC Penalty)
+#✔ Modified Fitness Function (Conv vs FC Penalty)
 -----------------------------------------------------------------
 
 We split model parameters into:
@@ -66,32 +66,18 @@ Weights used:
     w_conv = 1e−6  
     w_fc   = 5e−6
 
-Justification:
-    • Conv layers are compute-heavy → mild penalty  
-    • FC layers explode in size → stronger penalty  
-    • This promotes smaller, compute-friendly networks  
-
 -----------------------------------------------------------------
 #📊 Experimental Results
 -----------------------------------------------------------------
 
-Two NAS runs were performed:
+The following table summarizes the NAS results using both selection methods:
 
--------------------------------
-Run 4 — Tournament Selection
--------------------------------
-Accuracy:        0.6770  
-Orig Fitness:    0.6530  
-Weighted Fitness:0.6769  
-Params:          2,398,250 (~2.4M)
-
--------------------------------
-Run 5 — Roulette Selection
--------------------------------
-Accuracy:        0.6700  
-Orig Fitness:    0.6617  
-Weighted Fitness:0.6699  
-Params:          826,042 (~0.83M)
++----------------------+----------+------------------+----------------------+--------------+
+| Selection Method     | Accuracy | Original Fitness | Weighted Fitness     | Parameters   |
++----------------------+----------+------------------+----------------------+--------------+
+| Tournament (Run 4)   | 0.6770   | 0.6530           | 0.6769               | 2,398,250    |
+| Roulette (Run 5)     | 0.6700   | 0.6617           | 0.6699               | 826,042      |
++----------------------+----------+------------------+----------------------+--------------+
 
 -----------------------------------------------------------------
 #🧠 Interpretation
@@ -120,6 +106,4 @@ accuracy–complexity trade-off.
 • Weighted fitness accurately penalized FC-heavy models  
 • The new NAS setup discovers smaller CNNs without losing accuracy  
 
------------------------------------------------------------------
-End of README (formatted for Notepad++)
------------------------------------------------------------------
+
