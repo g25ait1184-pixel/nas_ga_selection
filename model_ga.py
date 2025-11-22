@@ -22,9 +22,9 @@ class Architecture:
             self.genes = self.random_genes()
         else:
             self.genes = genes
-        self.fitness = 0                 # kept for backward compatibility (original fitness)
-        self.fitness_original = 0        # alias for original fitness
-        self.fitness_weighted = 0        # new weighted fitness (conv/fc weights)
+        self.fitness = 0                 
+        self.fitness_original = 0        
+        self.fitness_weighted = 0        
         self.accuracy = 0
         self.best_epoch = 0
     
@@ -67,13 +67,7 @@ class GeneticAlgorithm:
     
     def evaluate_fitness(self, architecture, train_loader, val_loader, device, epochs=100,
                          w_conv=1e-6, w_fc=5e-6, lambda_orig=0.01):
-        """
-        Train and evaluate a single architecture.
-        Computes:
-          - original fitness (accuracy - lambda_orig * (num_params/1e6)) and stores in architecture.fitness_original
-          - weighted fitness that penalizes conv params and fc params with separate weights, stored in architecture.fitness_weighted
-        By default architecture.fitness is set to the original fitness for backward compatibility.
-        """
+    
         try:
             model = CNN(architecture.genes).to(device)
             criterion = nn.CrossEntropyLoss()
@@ -120,12 +114,12 @@ class GeneticAlgorithm:
             for name, param in model.named_parameters():
                 lname = name.lower()
                 if 'conv' in lname or 'bn' in lname or 'features' in lname:
-                    # heuristic: treat conv & batchnorm & features as conv-related
+                  
                     conv_params += param.numel()
                 elif 'fc' in lname or 'linear' in lname or 'classifier' in lname:
                     fc_params += param.numel()
                 else:
-                    # fallback: if it's a weight and 4D, likely conv; if 2D likely linear
+                    
                     if param.dim() == 4:
                         conv_params += param.numel()
                     else:
@@ -139,11 +133,11 @@ class GeneticAlgorithm:
                 conv_params = int(0.7 * num_params)
                 fc_params = num_params - conv_params
 
-            # Normalize params to millions to keep penalty scale reasonable
+            # Normalize params 
             conv_m = conv_params / 1e6
             fc_m = fc_params / 1e6
 
-            # Original complexity penalty (keeps previous behavior)
+            # Original complexity penalty 
             complexity_penalty_orig = num_params / 1e6
             fitness_original = best_acc - lambda_orig * complexity_penalty_orig
 
@@ -157,7 +151,7 @@ class GeneticAlgorithm:
             architecture.fitness_original = fitness_original
             architecture.fitness_weighted = fitness_weighted
 
-            # For backward compatibility keep architecture.fitness = original
+          
             architecture.fitness = architecture.fitness_original
 
             # cleanup
@@ -188,13 +182,8 @@ class GeneticAlgorithm:
         return selected
 
     def roulette_wheel_selection(self):
-        """Roulette-wheel (fitness-proportionate) selection.
-           Uses the architecture.fitness field for probabilities (by default it's original fitness).
-           If you'd like roulette to use weighted fitness instead, set architecture.fitness = architecture.fitness_weighted, or change this method.
-        """
-        # Ensure non-negative fitnesses: shift if needed
-        fitnesses = [max(0.0, arch.fitness) for arch in self.population]
-        total = sum(fitnesses)
+        fitnesses_val = [max(0.0, arch.fitness) for arch in self.population]
+        total = sum(fitnesses_val)
         selected = []
         if total == 0:
             # fallback: uniform random selection
@@ -203,7 +192,7 @@ class GeneticAlgorithm:
             return selected
 
         # compute cumulative distribution
-        probs = [f / total for f in fitnesses]
+        probs = [f / total for f in fitnesses_val]
         cum = []
         c = 0.0
         for p in probs:
@@ -219,7 +208,7 @@ class GeneticAlgorithm:
         return selected
 
     def selection(self, method='tournament'):
-        """Unified selection interface. Default keeps tournament selection."""
+        """ Default keeps tournament selection."""
         if method == 'tournament':
             return self.tournament_selection()
         elif method == 'roulette':
