@@ -63,8 +63,11 @@ New weighted fitness:
     fitness_weighted = accuracy − (w_conv × conv_M + w_fc × fc_M)
 
 Weights used:
-    w_conv = 1e−6  
-    w_fc   = 5e−6
+    w_conv = 1e−6  w_fc   = 5e−6
+Justification:
+    • Conv layers are compute-heavy → mild penalty  
+    • FC layers explode in size → stronger penalty  
+    • This promotes smaller, compute-friendly networks  
 
 -----------------------------------------------------------------
 #📊 Experimental Results
@@ -72,12 +75,10 @@ Weights used:
 
 The following table summarizes the NAS results using both selection methods:
 
-+----------------------+----------+------------------+----------------------+--------------+
-| Selection Method     | Accuracy | Original Fitness | Weighted Fitness     | Parameters   |
-+----------------------+----------+------------------+----------------------+--------------+
-| Tournament (Run 4)   | 0.6770   | 0.6530           | 0.6769               | 2,398,250    |
-| Roulette (Run 5)     | 0.6700   | 0.6617           | 0.6699               | 826,042      |
-+----------------------+----------+------------------+----------------------+--------------+
+| Selection Method   | Accuracy | Original Fitness | Weighted Fitness | Parameters |
+|--------------------|----------|------------------|------------------|------------|
+| Tournament (Run 4) | 0.6770   | 0.6530           | 0.6769           | 2,398,250  |
+| Roulette (Run 5)   | 0.6700   | 0.6617           | 0.6699           |   826,042  |
 
 -----------------------------------------------------------------
 #🧠 Interpretation
