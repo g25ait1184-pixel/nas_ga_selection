@@ -153,7 +153,11 @@ class GeneticAlgorithm:
 
           
             architecture.fitness = architecture.fitness_original
-
+            print(f"Conv params: {conv_params}, FC params: {fc_params}")
+            print(f"Total params: {num_params}")
+            print(f"Accuracy: {best_acc:.6f}")
+            print(f"Original fitness: {fitness_original:.6f}")
+            print(f"Weighted fitness: {fitness_weighted:.6f}")
             # cleanup
             del model, inputs, outputs, labels
             if torch.cuda.is_available():
@@ -193,11 +197,16 @@ class GeneticAlgorithm:
 
         # compute cumulative distribution
         probs = [f / total for f in fitnesses_val]
+        print("\n Relative Fitness Scores (normalized):")
+        print(probs)
         cum = []
         c = 0.0
         for p in probs:
             c += p
             cum.append(c)
+        print(" Cumulative Selection Probabilities:")
+        print(cum)
+        print()
 
         for _ in range(self.population_size):
             r = random.random()
