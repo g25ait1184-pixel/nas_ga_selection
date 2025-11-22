@@ -23,8 +23,8 @@ To improve exploration, **Roulette-Wheel Selection** was implemented.
     p_i = f_i / Σ f_i
 
 Where:
-    p_i = probability of selecting chromosome i  
-    f_i = fitness of chromosome i  
+		p_i = probability of selecting chromosome i  
+		f_i = fitness of chromosome i  
 
 Meaning:
 
@@ -43,9 +43,8 @@ Original Fitness Function penalized only total parameters:
 
 ⚠ Problem:
 This treats convolution and fully-connected layers equally:
-
-    - CONV layers → high compute cost, moderate params
-    - FC layers → low compute, very high params
+	CONV layers → high compute cost, moderate params
+	FC layers → low compute, very high params
 
 Thus the penalty is not realistic.
 
