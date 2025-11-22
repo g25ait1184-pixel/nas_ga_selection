@@ -1,0 +1,139 @@
+Project folder found in /content/ - skipping unzip.
+Using project dir: /content/nas-ga-basic-main
+Working directory: /content/nas-ga-basic-main
+Using device: cuda
+
+============================================================
+STARTING RUN 4  (selection=tournament)
+============================================================
+Starting with 5 Population:
+[Arch(conv=2, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=2, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000)]
+
+
+============================================================
+Generation 1/2
+============================================================
+Evaluating architecture 1/5... Fitness (orig): 0.5398, Accuracy: 0.5840
+Weighted fitness: 0.5840
+Evaluating architecture 2/5... Fitness (orig): 0.6530, Accuracy: 0.6770
+Weighted fitness: 0.6770
+Evaluating architecture 3/5... Fitness (orig): 0.5178, Accuracy: 0.5210
+Weighted fitness: 0.5210
+Evaluating architecture 4/5... Fitness (orig): 0.5319, Accuracy: 0.5740
+Weighted fitness: 0.5740
+Evaluating architecture 5/5... Fitness (orig): 0.6252, Accuracy: 0.6370
+Weighted fitness: 0.6370
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.6770, fit=0.6530)
+
+Best overall: Arch(conv=4, acc=0.6770, fit=0.6530)
+
+Performing selection (method=tournament) of total population: 5 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.6770, fit=0.6530), Arch(conv=4, acc=0.6370, fit=0.6252), Arch(conv=1, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000)]
+
+============================================================
+Generation 2/2
+============================================================
+Evaluating architecture 1/5... Fitness (orig): 0.6430, Accuracy: 0.6670
+Weighted fitness: 0.6670
+Evaluating architecture 2/5... Fitness (orig): 0.6332, Accuracy: 0.6450
+Weighted fitness: 0.6450
+Evaluating architecture 3/5... Fitness (orig): 0.4460, Accuracy: 0.5300
+Weighted fitness: 0.5300
+Evaluating architecture 4/5... Fitness (orig): 0.6192, Accuracy: 0.6310
+Weighted fitness: 0.6310
+Evaluating architecture 5/5... Fitness (orig): 0.6232, Accuracy: 0.6350
+Weighted fitness: 0.6350
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.6670, fit=0.6430)
+
+Best overall: Arch(conv=4, acc=0.6770, fit=0.6530)
+
+Performing selection (method=tournament) of total population: 5 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.6670, fit=0.6430), Arch(conv=4, acc=0.6450, fit=0.6332), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=2, acc=0.0000, fit=0.0000)]
+Completed run_4 in 707.8 s. Best arch saved to /content/nas-ga-basic-main/outputs/run_4/best_arch.pkl
+
+============================================================
+STARTING RUN 5  (selection=roulette)
+============================================================
+Starting with 5 Population:
+[Arch(conv=3, acc=0.0000, fit=0.0000), Arch(conv=2, acc=0.0000, fit=0.0000), Arch(conv=3, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000)]
+
+
+============================================================
+Generation 1/2
+============================================================
+Evaluating architecture 1/5... Fitness (orig): 0.6533, Accuracy: 0.6560
+Weighted fitness: 0.6560
+Evaluating architecture 2/5... Fitness (orig): 0.1930, Accuracy: 0.2180
+Weighted fitness: 0.2180
+Evaluating architecture 3/5... Fitness (orig): 0.6091, Accuracy: 0.6200
+Weighted fitness: 0.6200
+Evaluating architecture 4/5... Fitness (orig): 0.6412, Accuracy: 0.6580
+Weighted fitness: 0.6580
+Evaluating architecture 5/5... Fitness (orig): 0.6447, Accuracy: 0.6530
+Weighted fitness: 0.6530
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=3, acc=0.6560, fit=0.6533)
+
+Best overall: Arch(conv=3, acc=0.6560, fit=0.6533)
+
+Performing selection (method=roulette) of total population: 5 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=3, acc=0.6560, fit=0.6533), Arch(conv=4, acc=0.6530, fit=0.6447), Arch(conv=3, acc=0.0000, fit=0.0000), Arch(conv=3, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.6580, fit=0.6412)]
+
+============================================================
+Generation 2/2
+============================================================
+Evaluating architecture 1/5... Fitness (orig): 0.6393, Accuracy: 0.6420
+Weighted fitness: 0.6420
+Evaluating architecture 2/5... Fitness (orig): 0.6617, Accuracy: 0.6700
+Weighted fitness: 0.6700
+Evaluating architecture 3/5... Fitness (orig): 0.6473, Accuracy: 0.6500
+Weighted fitness: 0.6500
+Evaluating architecture 4/5... Fitness (orig): 0.6110, Accuracy: 0.6220
+Weighted fitness: 0.6220
+Evaluating architecture 5/5... Fitness (orig): 0.6272, Accuracy: 0.6440
+Weighted fitness: 0.6440
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.6700, fit=0.6617)
+
+Best overall: Arch(conv=4, acc=0.6700, fit=0.6617)
+
+Performing selection (method=roulette) of total population: 5 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.6700, fit=0.6617), Arch(conv=3, acc=0.6500, fit=0.6473), Arch(conv=3, acc=0.6500, fit=0.6473), Arch(conv=3, acc=0.6500, fit=0.6473), Arch(conv=3, acc=0.0000, fit=0.0000)]
+Completed run_5 in 972.2 s. Best arch saved to /content/nas-ga-basic-main/outputs/run_5/best_arch.pkl
+
+============================================================
+COMPARISON SUMMARY
+============================================================
+Run 4 (Tournament):
+  Accuracy: 0.677
+  Fitness (orig): 0.6530175
+  Fitness (weighted): 0.6769891905740001
+  Params: 2398250
+  Saved at: /content/nas-ga-basic-main/outputs/run_4
+
+Run 5 (Roulette):
+  Accuracy: 0.67
+  Fitness (orig): 0.66173958
+  Fitness (weighted): 0.669997054238
+  Params: 826042
+  Saved at: /content/nas-ga-basic-main/outputs/run_5
+
+WINNER (by original fitness):
+  Run 5 - selection: roulette
+  Accuracy: 0.67, Fitness (orig): 0.66173958, Params: 826042
+
+All done. Two runs completed and saved to outputs directory.
