@@ -1,8 +1,9 @@
 Genetic Algorithm–Based NAS 
 =================================================================
-
+-----------------------------------------------------------------
 #📘 Overview
-This document provides a detailed explanation of the Genetic Algorithm–based
+-----------------------------------------------------------------
+This  provides a detailed explanation of the Genetic Algorithm–based
 Neural Architecture Search (NAS), covering Q1A (Roulette-Wheel Selection) and
 Q2B (Weighted Fitness Function). This version is formatted cleanly for
 Notepad++ viewing.
