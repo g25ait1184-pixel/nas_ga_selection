@@ -124,8 +124,20 @@ Tournament model is 3.5× smaller.
 #✔ Final Conclusion
 -----------------------------------------------------------------
 
-• Roulette selection improved diversity and avoided premature convergence  
-• Weighted fitness accurately penalized FC-heavy models  
-• The new NAS setup discovers smaller CNNs without losing accuracy  
+his project evaluated two Genetic Algorithm (GA) selection mechanisms—Tournament Selection and Roulette-Wheel Selection—within a Neural Architecture Search (NAS) framework. We also enhanced the fitness function by introducing separate penalties for convolution (Conv) and fully connected (FC) parameters, reflecting their true computational cost.
+
+🔍 Key Findings
+
+Roulette-Wheel Selection achieved
+✔ Highest accuracy
+✔ Highest weighted fitness (Conv/FC-aware)
+✔ Better exploration of diverse architectures
+
+Tournament Selection achieved
+✔ Highest original fitness (accuracy – total parameters)
+✔ The smallest model (most parameter-efficient)
+✔ Strong exploitation of top-performing individuals
+
+The modified fitness function improved evaluation by penalizing Conv layers more heavily than FC layers, aligning with real compute cost. 
 
 
