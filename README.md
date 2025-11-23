@@ -91,15 +91,21 @@ The following table summarizes the NAS results using both selection methods:
 #🧠 Interpretation
 -----------------------------------------------------------------
 
-Tournament:
-    ✔ Good accuracy
-    ✖ Very large model (3× more parameters)
-    → Lower fitness
+Accuracy Winner → Roulette
 
-Roulette:
-    ✔ Slightly lower accuracy  
-    ✔ Much fewer parameters  
-    → Higher final fitness
+Highest accuracy (0.653).
+
+Original Fitness Winner → Tournament
+
+Lower parameter count gives better original fitness (0.633 > 0.608).
+
+Weighted Fitness Winner → Roulette
+
+Weighted fitness emphasises conv/FC penalties, and Roulette wins (0.65298 > 0.64599).
+
+Parameter Efficiency → Tournament
+
+Tournament model is 3.5× smaller.
 
 #🏆 Winner: Roulette-Wheel Selection
 
