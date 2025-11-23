@@ -38,7 +38,7 @@ val_loader = DataLoader(val_subset, batch_size=256, shuffle=False)
 
 # Run NAS with GA
 ga = GeneticAlgorithm(
-    population_size=2,  # Small population for demonstration
+    population_size=3,  # Small population for demonstration
     generations=3,       # Few generations for quick results
     mutation_rate=0.3,
     crossover_rate=0.7
@@ -60,7 +60,7 @@ print(f"\nModel architecture:\n{final_model}", flush=True)
 
 # Run NAS with GA
 ga1 = GeneticAlgorithm(
-    population_size=2,  # Small population for demonstration
+    population_size=3,  # Small population for demonstration
     generations=3,       # Few generations for quick results
     mutation_rate=0.3,
     crossover_rate=0.7
