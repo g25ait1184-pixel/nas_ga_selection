@@ -1,0 +1,31 @@
+============================================================
+COMPARISON SUMMARY
+============================================================
+Run 2 (Tournament):
+  Accuracy: 0.646
+  Fitness (orig): 0.63336118
+  Fitness (weighted): 0.645994536142
+  Params: 1263882
+  Saved at: /content/nas-ga-basic-main/outputs/run_2
+
+Run 3 (Roulette):
+  Accuracy: 0.653
+  Fitness (orig): 0.6085202200000001
+  Fitness (weighted): 0.6529787522380001
+  Params: 4447978
+  Saved at: /content/nas-ga-basic-main/outputs/run_3
+
+WINNER (by original fitness):
+  Run 2 - selection: tournament
+  Accuracy: 0.646, Fitness (orig): 0.63336118, Params: 1263882
+WINNER (by WEIGHTED fitness):
+  Run 3  |  Method: roulette
+  Accuracy: 0.6530
+  Fitness (weighted): 0.652979
+  Params: 4447978
+WINNER (by ACCURACY):
+  Run 3  |  Method: roulette
+  Accuracy: 0.6530
+  Params: 4447978
+
+All done. Two runs completed and saved to outputs directory.

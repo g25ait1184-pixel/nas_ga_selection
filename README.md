@@ -74,13 +74,18 @@ Justification:
 -----------------------------------------------------------------
 #📊 Experimental Results
 -----------------------------------------------------------------
-
+- Dataset: CIFAR-10 (subset for quick NAS)
+- Population size: small (for faster runs)
+- Generations: small (for demonstration)
+- Two selection strategies compared:
+  - **Tournament selection** (uses original fitness = accuracy − λ · total_params)
+  - **Roulette-wheel selection** (uses weighted fitness = accuracy − (w_conv·conv_M + w_fc·fc_M))
 The following table summarizes the NAS results using both selection methods:
 
 | Selection Method   | Accuracy | Original Fitness | Weighted Fitness | Parameters |
 |--------------------|----------|------------------|------------------|------------|
-| Tournament (Run 4) | 0.6770   | 0.6530           | 0.6769           | 2,398,250  |
-| Roulette (Run 5)   | 0.6700   | 0.6617           | 0.6699           |   826,042  |
+| Tournament (Run 2) | 0.6460    | 0.63336118 | 0.645994536142            | 1,263,882   |
+| Roulette (Run 3)   | 0.6530    | 0.60852022           | 0.652978752238          |    4,447,978  |
 
 -----------------------------------------------------------------
 #🧠 Interpretation
@@ -98,9 +103,15 @@ Roulette:
 
 #🏆 Winner: Roulette-Wheel Selection
 
-Roulette produced a more parameter-efficient architecture with better 
-accuracy–complexity trade-off.
-
+- **Winner by original fitness:** Run 2 (Tournament).  
+  The original fitness penalizes total parameters uniformly; under that metric the tournament-selected architecture scored higher.
+- **Winner by weighted fitness:** Run 3 (Roulette).  
+  The modified weighted fitness (separate conv/FC penalties) favored the architecture produced by roulette selection.
+- **Winner by accuracy:** Run 3 (Roulette) has higher raw accuracy (0.6530 vs 0.6460) but also has far more parameters (~4.45M vs ~1.26M)..
+## Trade-off and recommendation
+- The two methods optimized different objectives (tournament used the original penalty; roulette used the conv/FC weighted penalty). Because objectives differ, direct comparison must specify the metric used.
+- If your goal is **max accuracy** (and model size is less important), choose Run 3 (Roulette).
+- If your goal is **compact models** or to minimize the original total-params penalty, choose Run 2 (Tournament).
 -----------------------------------------------------------------
 #✔ Final Conclusion
 -----------------------------------------------------------------

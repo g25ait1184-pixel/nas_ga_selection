@@ -1,0 +1,183 @@
+
+============================================================
+STARTING RUN 2 (selection=tournament)
+============================================================
+Starting with 3 Population:
+[Arch(conv=1, acc=0.0000, fit=0.0000), Arch(conv=4, acc=0.0000, fit=0.0000), Arch(conv=1, acc=0.0000, fit=0.0000)]
+
+
+============================================================
+Generation 1/5
+============================================================
+Evaluating architecture 1/3... Conv params: 9600, FC params: 8394250
+Total params: 8403850
+Accuracy: 0.541000
+Original fitness: 0.456962
+Weighted fitness: 0.540958
+Fitness (orig): 0.4570, Accuracy: 0.5410
+Weighted fitness: 0.5410
+Evaluating architecture 2/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.589000
+Original fitness: 0.576361
+Weighted fitness: 0.588995
+Fitness (orig): 0.5764, Accuracy: 0.5890
+Weighted fitness: 0.5890
+Evaluating architecture 3/3... Conv params: 960, FC params: 2099978
+Total params: 2100938
+Accuracy: 0.536000
+Original fitness: 0.514991
+Weighted fitness: 0.535989
+Fitness (orig): 0.5150, Accuracy: 0.5360
+Weighted fitness: 0.5360
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.5890, fit=0.5764)
+
+Best overall: Arch(conv=4, acc=0.5890, fit=0.5764)
+
+Performing selection (method=tournament) of total population: 3 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.5890, fit=0.5764), Arch(conv=1, acc=0.5360, fit=0.5150), Arch(conv=4, acc=0.0000, fit=0.0000)]
+
+============================================================
+Generation 2/5
+============================================================
+Evaluating architecture 1/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.588000
+Original fitness: 0.575361
+Weighted fitness: 0.587995
+Fitness (orig): 0.5754, Accuracy: 0.5880
+Weighted fitness: 0.5880
+Evaluating architecture 2/3... Conv params: 960, FC params: 2099978
+Total params: 2100938
+Accuracy: 0.527000
+Original fitness: 0.505991
+Weighted fitness: 0.526989
+Fitness (orig): 0.5060, Accuracy: 0.5270
+Weighted fitness: 0.5270
+Evaluating architecture 3/3... Conv params: 131568, FC params: 1049994
+Total params: 1181562
+Accuracy: 0.598000
+Original fitness: 0.586184
+Weighted fitness: 0.597995
+Fitness (orig): 0.5862, Accuracy: 0.5980
+Weighted fitness: 0.5980
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.5980, fit=0.5862)
+
+Best overall: Arch(conv=4, acc=0.5980, fit=0.5862)
+
+Performing selection (method=tournament) of total population: 3 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.5980, fit=0.5862), Arch(conv=4, acc=0.5880, fit=0.5754), Arch(conv=4, acc=0.0000, fit=0.0000)]
+
+============================================================
+Generation 3/5
+============================================================
+Evaluating architecture 1/3... Conv params: 131568, FC params: 1049994
+Total params: 1181562
+Accuracy: 0.561000
+Original fitness: 0.549184
+Weighted fitness: 0.560995
+Fitness (orig): 0.5492, Accuracy: 0.5610
+Weighted fitness: 0.5610
+Evaluating architecture 2/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.643000
+Original fitness: 0.630361
+Weighted fitness: 0.642995
+Fitness (orig): 0.6304, Accuracy: 0.6430
+Weighted fitness: 0.6430
+Evaluating architecture 3/3... Conv params: 131568, FC params: 4199946
+Total params: 4331514
+Accuracy: 0.605000
+Original fitness: 0.561685
+Weighted fitness: 0.604979
+Fitness (orig): 0.5617, Accuracy: 0.6050
+Weighted fitness: 0.6050
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.6430, fit=0.6304)
+
+Best overall: Arch(conv=4, acc=0.6430, fit=0.6304)
+
+Performing selection (method=tournament) of total population: 3 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.6430, fit=0.6304), Arch(conv=4, acc=0.6050, fit=0.5617), Arch(conv=4, acc=0.6430, fit=0.6304)]
+
+============================================================
+Generation 4/5
+============================================================
+Evaluating architecture 1/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.605000
+Original fitness: 0.592361
+Weighted fitness: 0.604995
+Fitness (orig): 0.5924, Accuracy: 0.6050
+Weighted fitness: 0.6050
+Evaluating architecture 2/3... Conv params: 131568, FC params: 4199946
+Total params: 4331514
+Accuracy: 0.629000
+Original fitness: 0.585685
+Weighted fitness: 0.628979
+Fitness (orig): 0.5857, Accuracy: 0.6290
+Weighted fitness: 0.6290
+Evaluating architecture 3/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.639000
+Original fitness: 0.626361
+Weighted fitness: 0.638995
+Fitness (orig): 0.6264, Accuracy: 0.6390
+Weighted fitness: 0.6390
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.6390, fit=0.6264)
+
+Best overall: Arch(conv=4, acc=0.6430, fit=0.6304)
+
+Performing selection (method=tournament) of total population: 3 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.6390, fit=0.6264), Arch(conv=4, acc=0.6050, fit=0.5924), Arch(conv=4, acc=0.6390, fit=0.6264)]
+
+============================================================
+Generation 5/5
+============================================================
+Evaluating architecture 1/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.623000
+Original fitness: 0.610361
+Weighted fitness: 0.622995
+Fitness (orig): 0.6104, Accuracy: 0.6230
+Weighted fitness: 0.6230
+Evaluating architecture 2/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.587000
+Original fitness: 0.574361
+Weighted fitness: 0.586995
+Fitness (orig): 0.5744, Accuracy: 0.5870
+Weighted fitness: 0.5870
+Evaluating architecture 3/3... Conv params: 213888, FC params: 1049994
+Total params: 1263882
+Accuracy: 0.646000
+Original fitness: 0.633361
+Weighted fitness: 0.645995
+Fitness (orig): 0.6334, Accuracy: 0.6460
+Weighted fitness: 0.6460
+
+Sorting population in terms of fitness score (high -> low) ...
+Best in generation: Arch(conv=4, acc=0.6460, fit=0.6334)
+
+Best overall: Arch(conv=4, acc=0.6460, fit=0.6334)
+
+Performing selection (method=tournament) of total population: 3 ...
+Performing Crossover & Mutation ...
+Elitism: Keeping top 2 architectures in next generation.
+Next Generation: [Arch(conv=4, acc=0.6460, fit=0.6334), Arch(conv=4, acc=0.6230, fit=0.6104), Arch(conv=4, acc=0.6460, fit=0.6334)]
+Completed run_2 in 950.4 s. Best arch saved to /content/nas-ga-basic-main/outputs/run_2/best_arch.pkl
