@@ -106,15 +106,17 @@ Weighted fitness emphasises conv/FC penalties, and Roulette wins (0.65298 > 0.64
 Parameter Efficiency → Tournament
 
 Tournament model is 3.5× smaller.
-
+-----------------------------------------------------------------
 #🏆 Winner: Roulette-Wheel Selection
-
+-----------------------------------------------------------------
 - **Winner by original fitness:** Run 2 (Tournament).  
   The original fitness penalizes total parameters uniformly; under that metric the tournament-selected architecture scored higher.
 - **Winner by weighted fitness:** Run 3 (Roulette).  
   The modified weighted fitness (separate conv/FC penalties) favored the architecture produced by roulette selection.
-- **Winner by accuracy:** Run 3 (Roulette) has higher raw accuracy (0.6530 vs 0.6460) but also has far more parameters (~4.45M vs ~1.26M)..
+- **Winner by accuracy:** Run 3 (Roulette) has higher raw accuracy (0.6530 vs 0.6460) but also has far more parameters (~4.45M vs ~1.26M)
+-----------------------------------------------------------------
 ## Trade-off and recommendation
+-----------------------------------------------------------------
 - The two methods optimized different objectives (tournament used the original penalty; roulette used the conv/FC weighted penalty). Because objectives differ, direct comparison must specify the metric used.
 - If your goal is **max accuracy** (and model size is less important), choose Run 3 (Roulette).
 - If your goal is **compact models** or to minimize the original total-params penalty, choose Run 2 (Tournament).
