@@ -151,8 +151,8 @@ class GeneticAlgorithm:
             architecture.fitness_original = fitness_original
             architecture.fitness_weighted = fitness_weighted
 
-          
-            architecture.fitness = architecture.fitness_original
+            
+            #architecture.fitness = architecture.fitness_original
             print(f"Conv params: {conv_params}, FC params: {fc_params}")
             print(f"Total params: {num_params}")
             print(f"Accuracy: {best_acc:.6f}")
@@ -163,7 +163,8 @@ class GeneticAlgorithm:
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()
             
-            return architecture.fitness
+            #return architecture.fitness
+            return None
             
         except Exception as e:
             print(f"Error evaluating architecture: {e}", flush=True)
@@ -198,16 +199,16 @@ class GeneticAlgorithm:
         # compute cumulative distribution
         probs = [f / total for f in fitnesses_val]
         print("\n Relative Fitness Scores (normalized):")
-        print(probs)
+        print(probs,flush=True)
         cum = []
         c = 0.0
         for p in probs:
             c += p
             cum.append(c)
-        print(" Cumulative Selection Probabilities:")
-        print(cum)
-        print()
-
+        print("Cumulative Selection Probabilities:", flush=True)
+        print(cum, flush=True)
+        print("", flush=True)
+        
         for _ in range(self.population_size):
             r = random.random()
             for i, threshold in enumerate(cum):
@@ -312,6 +313,12 @@ class GeneticAlgorithm:
             for i, arch in enumerate(self.population):
                 print(f"Evaluating architecture {i+1}/{self.population_size}...", end=' ', flush=True)
                 fitness = self.evaluate_fitness(arch, train_loader, val_loader, device)
+                if selection_method == 'tournament':
+                    arch.fitness = arch.fitness_original
+                elif selection_method == 'roulette':
+                    arch.fitness = arch.fitness_weighted
+                else:
+                    arch.fitness = arch.fitness_original
                 print(f"Fitness (orig): {arch.fitness_original:.4f}, Accuracy: {arch.accuracy:.4f}", flush=True)
                 # also show weighted fitness if desired
                 print(f"Weighted fitness: {arch.fitness_weighted:.4f}", flush=True)
